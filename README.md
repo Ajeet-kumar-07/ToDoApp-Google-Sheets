@@ -27,7 +27,7 @@ $ npm install
 ### Create a Google Sheet Integration in Apico
 Login to your [Apico](https://apico.dev) account and create a new Google sheets integration. Note the integration ID in the Readme.md file.
 
-![image]([https://github.com/apicodev/example-react-todo-google-sheets/assets/53584487/79379d9e-3b6e-4b80-b45d-65be830e3cee](https://github.com/Ajeet-kumar-07/ToDoApp-Google-Sheets/blob/main/src/assets/Screenshot%202025-06-18%20112836.png))
+![image](https://github.com/Ajeet-kumar-07/ToDoApp-Google-Sheets/blob/main/src/assets/Screenshot%202025-06-18%20112836.png?raw=true)
 
 ---
 ### Create an Empty Google sheet in your Google Account
