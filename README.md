@@ -1,68 +1,78 @@
-# Todo Example with Apico Google Sheets 
-This example showcases how you can build a simple Todo application with Google sheets as a backend.
+# ToDo App with Google Sheets (Apico Integration)
 
-
-https://github.com/apicodev/example-react-todo-google-sheets/assets/53584487/5c20be45-fd29-41c2-9548-600ef28c18c0
-
-
-
-## Running the project
+A beautiful, animated, and minimalist Todo app that syncs with Google Sheets using Apico.
 
 ---
-### Setup the repository
-Clone the repository into your machine
-```
-$ git clone https://github.com/apicodev/example-react-todo-google-sheets.git
-```
 
-
-CD into the reposity and install the dependencies
-
-```
-$ cd example-react-todo-google-sheets
-$ npm install
-```
+## ✨ Features
+- **Google Sheets as backend** (via Apico)
+- **Add, complete, edit, and delete todos**
+- **Inline editing** with animated transitions
+- **Minimalist icons** for due date, priority, and tags
+- **Subtle, modern animations** for all actions (add, remove, complete, edit)
+- **Contextual actions** (edit/delete only on hover)
+- **Responsive and clean UI**
 
 ---
-### Create a Google Sheet Integration in Apico
-Login to your [Apico](https://apico.dev) account and create a new Google sheets integration. Note the integration ID in the Readme.md file.
 
-![image](https://github.com/Ajeet-kumar-07/ToDoApp-Google-Sheets/blob/main/src/assets/Screenshot%202025-06-18%20112836.png?raw=true)
+## 🚀 Getting Started
 
----
-### Create an Empty Google sheet in your Google Account
-Login to your [Google Sheets](https://sheets.google.com) account and create a new Google Sheet and note down the URL
-
-The URL should look something similar to this
-```
-https://docs.google.com/spreadsheets/d/1AzT-z51EMqI_-Fe98434p_AP8Nq343rbheLPUfnw1FGCNo/edit#gid=1196872439
+### 1. Clone the repository
+```sh
+git clone https://github.com/Ajeet-kumar-07/ToDoApp-Google-Sheets.git
+cd ToDoApp-Google-Sheets
 ```
 
-Here the variables you might need are as follows
-
-| Variable     | Value                                               |
-|--------------|-----------------------------------------------------|
-| spreadSheetId| 1AzT-z51EMqI_-Fe98434p_AP8Nq343rbheLPUfnw1FGCNo     |
-| sheetId      | 1196872439                                          |
-
-The name of your sheet/page or `SheetName` will be displayed at the bottom of the google sheets page. Optionally you can find the name and sheetId (gid) via the *Get Spreadsheet API*.
-
----
-### Replace the variables in the code
-Open the `/src/api/sheets.ts` file and replace the variables in the following lines
-```
-...
-const apicoIntegrationId: string = "<Replace with your apico gsheet integration id>";
-const spreadSheetId: string = "<Replace with your google sheet id>";
-const sheetName: string = "Sheet1"; // replace with your sheet name
-const sheetId: number = 1196872439; // replace with your sheet/page gid (not sheet name)
-...
+### 2. Install dependencies
+```sh
+npm install
 ```
 
----
-### Finally run the project!
+### 3. Create a Google Sheet & Apico Integration
+- Go to [Google Sheets](https://sheets.google.com) and create a new sheet.
+- Go to [Apico](https://apico.dev) and create a new Google Sheets integration.
+- **Note your integration ID** (e.g., `SM9HI3`).
+- **Share your Google Sheet** with the Apico service account email (see Apico dashboard for the email) as an **Editor**.
+
+### 4. Configure your app
+Edit `src/api/sheets.ts` and set:
+```ts
+const apicoIntegrationId: string = "<Your Apico integration id>";
+const spreadSheetId: string = "<Your Google sheet id>";
+const sheetName: string = "Sheet1"; // Must match your tab name exactly
+const sheetId: number = <Your sheet/page gid>; // From the URL (gid=...)
 ```
+
+### 5. Run the app
+```sh
 npm run dev
 ```
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
-![Screenshot 2024-02-11 at 12 05 30 AM](https://github.com/apicodev/example-react-todo-google-sheets/assets/53584487/1e0d9e05-56ca-4a02-9dc5-915f3c801d7d)
+---
+
+## 🛠️ Troubleshooting
+- **403 Forbidden errors?**
+  - Make sure your Google Sheet is shared with the Apico service account (Editor access).
+  - Double-check your integration ID, sheet ID, and sheet name.
+  - Wait a few minutes after sharing for permissions to propagate.
+- **Edits not syncing?**
+  - Ensure you are using the latest code (inline editing now syncs with Google Sheets).
+- **Animations not working?**
+  - Make sure your browser supports modern CSS and JavaScript.
+
+---
+
+## 📸 Screenshots
+![Animated Todo App](https://github.com/Ajeet-kumar-07/ToDoApp-Google-Sheets/blob/main/src/assets/Screenshot%202025-06-18%20112836.png?raw=true)
+
+---
+
+## 📚 Credits
+- Built with [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Apico](https://apico.dev), and [Google Sheets](https://sheets.google.com)
+- Animations and UI inspired by modern productivity tools
+
+---
+
+## License
+MIT
